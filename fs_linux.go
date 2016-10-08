@@ -30,6 +30,8 @@ func FileSystems() ([]*FileSystem, error) {
 		return nil, Errno()
 	}
 
+	defer C.endmntent(f)
+
 	var result []*FileSystem
 
 	for {
