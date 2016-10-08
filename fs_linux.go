@@ -14,6 +14,7 @@ import (
 */
 import "C"
 
+// get information about mounted file systems
 func FileSystems() ([]*FileSystem, error) {
 	filename := C.CString("/proc/mounts")
 

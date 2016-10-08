@@ -13,6 +13,7 @@ import (
 */
 import "C"
 
+// the mount flags
 type MountFlags int
 
 var mountFlags = []struct {
@@ -53,6 +54,7 @@ func (flags MountFlags) Options() (opts []string) {
 	return
 }
 
+// get information about mounted file systems
 func FileSystems() ([]*FileSystem, error) {
 	var p *C.struct_statfs
 
