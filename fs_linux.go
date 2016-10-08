@@ -29,7 +29,7 @@ func FileSystems() ([]*FileSystem, error) {
 		return nil, Errno()
 	}
 
-	var result []FileSystem
+	var result []*FileSystem
 
 	for {
 		entry := C.getmntent(f)
@@ -38,7 +38,7 @@ func FileSystems() ([]*FileSystem, error) {
 			break
 		}
 
-		result = append(result, FileSystem{
+		result = append(result, &FileSystem{
 			Name:    C.GoString(entry.mnt_fsname),
 			Path:    C.GoString(entry.mnt_dir),
 			Type:    C.GoString(entry.mnt_type),
