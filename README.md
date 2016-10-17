@@ -5,7 +5,7 @@ Get information about the mounted file systems.
  - [x] list the mounted file system
  - [x] support Linux
  - [x] support MacOS/BSD
- - [ ] support Windows
+ - [x] support Windows
  - [x] command line tools (fstab)
 
 # Install
